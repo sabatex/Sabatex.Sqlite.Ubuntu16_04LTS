@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<Version>1.0.4</Version>
+	  <PackageReadmeFile>Readme.md</PackageReadmeFile>
+	  <UserSecretsId>522a5a56-2d45-4ce0-833b-f539733489f2</UserSecretsId>  
+  </PropertyGroup>
+	<ItemGroup>
+		<None Include="Readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+  <ItemGroup>
+    <None Remove="libe_sqlite3.so" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="libe_sqlite3.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <PackageCopyToOutput>true</PackageCopyToOutput>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
